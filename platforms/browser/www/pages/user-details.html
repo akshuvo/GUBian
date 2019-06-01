@@ -17,9 +17,7 @@
           <div class="card-content card-content-padding">
             
             <div class="block-title">মন্ত্রণালয়/বিভাগ:</div>
-            <div class="block">
-              <div class="div-detail">{{userdiv}}</div>
-            </div>
+            <div class="block">{{userdiv}}</div>
 
             <div class="block-title">নাম:</div>
             <div class="block">{{user.name}}</div>
@@ -54,7 +52,7 @@
       var userdiv = '';
 
       currentuser.division.forEach(function (items,index) {
-        userdiv += '<span>'+items.div+'</span>';
+        userdiv += '<div class="chip chip-outline"><div class="chip-label">'+items.div+'</div></div>';
       });
       
       return {
