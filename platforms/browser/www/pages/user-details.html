@@ -1,0 +1,66 @@
+<template>
+  <div class="page" data-name="users">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">{{user.name}}</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="card demo-card-header-pic">
+          <div data-background="{{user.url}}" valign="bottom" class="lazy card-header"></div>
+          <div class="card-content card-content-padding">
+            
+            <div class="block-title">মন্ত্রণালয়/বিভাগ:</div>
+            <div class="block">
+              <div class="div-detail">{{userdiv}}</div>
+            </div>
+
+            <div class="block-title">নাম:</div>
+            <div class="block">{{user.name}}</div>
+
+            <div class="block-title">পদবি:</div>
+            <div class="block">{{user.title}}</div>
+
+            <div class="block-title">নিয়োগের তারিখ:</div>
+            <div class="block">{{user.joindate}}</div>
+
+            <div class="block-title">বন্টনের তারিখ:</div>
+            <div class="block">{{user.distdate}}</div>
+                     
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    data: function () {
+      var userId = this.$route.params.id;
+      var currentuser;
+
+      this.$root.users.forEach(function (user) {
+        if (user.id === userId) {
+          currentuser = user;
+        }
+      });
+
+      var userdiv = '';
+
+      currentuser.division.forEach(function (items,index) {
+        userdiv += '<span>'+items.div+'</span>';
+      });
+      
+      return {
+        user: currentuser,
+        userdiv: userdiv
+      };
+    }
+  };
+</script>

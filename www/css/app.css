@@ -1,0 +1,34 @@
+/* Your app styles here */
+.ios .tabbar-labels .tab-link:not(.tab-link-active) .icon-ios-fill {
+  display: none;
+}
+.ios .tabbar-labels .tab-link.tab-link-active .icon:not(.icon-ios-fill) {
+  display: none;
+}
+.list .item-title {
+    color: #212121;
+}
+.list .item-subtitle {
+    color: #5a5a5a;
+}
+.media-list .item-media, li.media-item .item-media {
+    align-self: unset !important;
+}
+.list .item-subtitle span, .div-detail span {
+    font-size: 12px;
+    border: 1px solid #00000012;
+    padding: 3px 7px;
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    margin: 1px;
+}
+.card-header {
+    height: 230px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-content .block-title{
+	margin-left: 0;
+}

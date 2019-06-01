@@ -1,0 +1,57 @@
+<template>
+  <div class="page" data-name="search">
+    <div class="navbar">
+      <div class="navbar-inner sliding">    
+        <div class="title sliding">মন্ত্রিসভা তালিকা ২০১৯</div>  
+        <div class="subnavbar">
+          <form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init">
+            <div class="searchbar-inner">
+              <div class="searchbar-input-wrap">
+                <input type="search" placeholder="Search"/>
+                <i class="searchbar-icon"></i>
+                <span class="input-clear-button"></span>
+              </div>
+              <span class="searchbar-disable-button if-not-aurora">Cancel</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="searchbar-backdrop"></div>
+      <div class="list simple-list searchbar-not-found">
+          <ul><li>তথ্য পাওয়া যায়নি</li></ul>
+      </div>
+      <div class="list media-list search-list searchbar-found">
+        <ul>
+          {{#each users}}
+            <li class="item-content">              
+                <a href="/user/{{id}}/" class="item-media"><img width="60" data-src="{{url}}" class="lazy"></a>
+                <a href="/user/{{id}}/" class="item-inner">
+                    <div class="item-title-row">
+                        <div class="item-title">{{name}}</div>
+                    </div>
+                    <div class="item-subtitle">
+                      {{#each division}}
+                      <span>{{div}}</span>
+                      {{/each}}
+                    </div>
+                </a>              
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>    
+  </div>
+
+</template>
+<script>
+  return {
+    data: function () {
+      return {
+        users: this.$root.users,
+      };
+    }
+  };
+</script>
