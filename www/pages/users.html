@@ -10,7 +10,7 @@
         <ul>
           {{#each users}}
             <li class="item-content">              
-                <a href="/user/{{id}}/" class="item-media"><img width="60" data-src="{{url}}" class="lazy"></a>
+                <a href="/user/{{id}}/" class="item-media"><img width="60" src="{{url}}" class="lazy"></a>
                 <a href="/user/{{id}}/" class="item-inner">
                     <div class="item-title-row">
                         <div class="item-title">{{name}}</div>
@@ -31,6 +31,36 @@
   </div>
 </template>
 <script>
+
+var data = [
+  
+]
+
+app.request({
+  url: 'https://devshuvo.com/wp-json/wp/v2/posts',
+  dataType: 'json',
+  crossDomain: true,
+  contentType: 'application/json',
+  data: {
+    title: 'The title for the object.',
+    content: 'The content for the object.',
+    status: 'publish',
+
+  },
+  method: 'POST',
+  statusCode: {
+    404: function (xhr) {
+      alert('page not found');
+    }
+  },
+  beforeSend: function (xhr){
+    xhr.setRequestHeader('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZGV2c2h1dm8uY29tIiwiaWF0IjoxNTU5NDAxMTk0LCJuYmYiOjE1NTk0MDExOTQsImV4cCI6MTU2MDAwNTk5NCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMiJ9fX0.hb06SW3l9vVMYma6WFkP18kJi0DhFmM6u8ctITZOXlQ' );
+  },
+  success: function (data, status, xhr){
+    console.log(data);
+  }
+})
+
   return {
     data: function () {
       return {

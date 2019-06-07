@@ -5,30 +5,38 @@
 .ios .tabbar-labels .tab-link.tab-link-active .icon:not(.icon-ios-fill) {
   display: none;
 }
-.list .item-title {
-    color: #212121;
+/* Custom color theme */
+:root {
+  --f7-theme-color: #4cd96e;
+  --f7-theme-color-rgb: 76, 217, 110;
+  --f7-theme-color-shade: #2cd054;
+  --f7-theme-color-tint: #6ee089;
 }
-.list .item-subtitle {
-    color: #5a5a5a;
+/* Invert navigation bars to fill style */
+:root,
+:root.theme-dark,
+:root .theme-dark {
+  --f7-bars-bg-color: var(--f7-theme-color);
+  --f7-bars-text-color: #fff;
+  --f7-bars-link-color: #fff;
+  --f7-navbar-subtitle-text-color: rgba(255,255,255,0.85);
+  --f7-bars-border-color: transparent;
+  --f7-tabbar-link-active-color: #fff;
+  --f7-tabbar-link-inactive-color: rgba(255,255,255,0.54);
+  --f7-searchbar-bg-color: var(--f7-bars-bg-color);
+  --f7-searchbar-input-bg-color: #fff;
+  --f7-searchbar-input-text-color: #000;
+  --f7-sheet-border-color: transparent;
+  --f7-tabbar-link-active-border-color: #fff;
 }
-.media-list .item-media, li.media-item .item-media {
-    align-self: unset !important;
-}
-.list .item-subtitle span, .div-detail span {
-    font-size: 12px;
-    border: 1px solid #00000012;
-    padding: 3px 7px;
-    display: inline-flex;
-    align-content: center;
-    align-items: center;
-    margin: 1px;
-}
-.card-header {
-    height: 230px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.card-content .block-title{
-	margin-left: 0;
+.appbar,
+.navbar,
+.toolbar,
+.subnavbar,
+.calendar-header,
+.calendar-footer {
+  --f7-touch-ripple-color: var(--f7-touch-ripple-white);
+  --f7-link-highlight-color: var(--f7-link-highlight-white);
+  --f7-button-text-color: #fff;
+  --f7-button-pressed-bg-color: rgba(255,255,255,0.1);
 }
