@@ -1307,7 +1307,7 @@ html.device-full-viewport body {
   --f7-navbar-large-collapse-progress: 1;
 }
 .navbar-inner {
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   width: 100%;

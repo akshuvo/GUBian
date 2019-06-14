@@ -48,6 +48,9 @@ var app  = new Framework7({
 var homeView = app.views.create('#view-home', {
   url: '/'
 });
+var indexView = app.views.create('#view-index', {
+  url: '/login'
+});
 var catalogView = app.views.create('#view-catalog', {
   url: '/catalog/'
 });
@@ -55,15 +58,3 @@ var settingsView = app.views.create('#view-settings', {
   url: '/settings/'
 });
 
-
-// Login Screen Demo
-$$('#my-login-screen .login-button').on('click', function () {
-  var username = $$('#my-login-screen [name="username"]').val();
-  var password = $$('#my-login-screen [name="password"]').val();
-
-  // Close login screen
-  app.loginScreen.close('#my-login-screen');
-
-  // Alert username and password
-  app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
-});
